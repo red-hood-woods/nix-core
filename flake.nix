@@ -1,5 +1,5 @@
 {
-  description = "Alice's Core Nix modules (Zsh & Tmux)";
+  description = "Alice's Core Nix modules";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
