@@ -48,7 +48,7 @@
 
       shellAliases = {
         # Nix
-        nixsw = "sudo nixos-rebuild switch --flake .#${if config ? osConfig then config.osConfig.networking.hostName else \"wonderland\"}";
+        nixsw = "sudo nixos-rebuild switch --flake .#${if config ? osConfig then config.osConfig.networking.hostName else "wonderland"}";
         nixup = "nix flake update";
 
         # Convenience
