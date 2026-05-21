@@ -1,0 +1,63 @@
+#+author: Alice Liddell
+#+options: toc:nil
+
+* What?
+welcome to my core nix modules! this is the heart of my terminal setup — containing my super cozy zsh and tmux configurations ♡
+
+these modules are imported by both my main nix config and my nixlab setup to keep my shell experience consistent and gorgeous everywhere! :3
+
+* Why?
+because copying and pasting zshrc and tmux configs across different repositories is way too messy! packing them into a reusable flake module makes me feel super organized and happy~ ✧*。
+
+* Where?
+here is the map of my shell essentials:
+
+- =modules/= — the core shell modules
+  - =core.nix= — the master module that bundle imports both zsh and tmux for a complete terminal experience!
+  - =zsh/= — my ultimate zsh shell setup
+    - =default.nix= — home manager configuration (sets up aliases, starship, zoxide, direnv, fzf, bat, etc.)
+    - =zshrc= — custom completion tweaks, key bindings, and handy git aliases!
+    - =starship.toml= — prompt configuration for a pretty visual indicator of where i am.
+  - =tmux/= — my terminal multiplexer config
+    - =default.nix= — tmux packages and source configuration.
+    - =tmux.conf= — mouse support, window renumbering, C-a prefix, and my favorite everforest dark-medium theme!
+
+* How to use this?
+
+** 1. add it as a flake input
+in your target flake's =flake.nix=, add this repository as an input:
+#+begin_src nix
+  inputs = {
+    core-nix = {
+      url = "github:red-hood-woods/nix-core";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+#+end_src
+
+** 2. import the modules in home-manager
+you can import the whole bundle or individual shell modules in your home manager config:
+
+*** to import everything:
+#+begin_src nix
+  home-manager.sharedModules = [
+    inputs.core-nix.homeManagerModules.core
+  ];
+#+end_src
+
+*** or just import zsh or tmux separately:
+#+begin_src nix
+  home-manager.sharedModules = [
+    inputs.core-nix.homeManagerModules.zsh
+    # inputs.core-nix.homeManagerModules.tmux
+  ];
+#+end_src
+
+*** 3. enable the option in your user config
+enable the module inside your user's home manager config:
+#+begin_src nix
+  nixtop.terminal.zsh.enable = true;
+#+end_src
+
+* Who's Alice?
+im alice silly goose~
