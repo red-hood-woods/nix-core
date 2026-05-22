@@ -8,7 +8,8 @@
   outputs = { self, nixpkgs, ... }@inputs: {
     homeManagerModules = {
       zsh = import ./modules/zsh;
-      tmux = import ./modules/tmux;
+      # tmux = import ./modules/tmux;
+      zellij = import ./modules/zellij;
       core = import ./modules/core.nix;
     };
   };

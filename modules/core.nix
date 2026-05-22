@@ -3,6 +3,7 @@
 {
   imports = [
     ./zsh
-    ./tmux
+    # ./tmux
+    ./zellij
   ];
 }
