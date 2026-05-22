@@ -20,5 +20,9 @@
       ];
       extraConfig = builtins.readFile ./tmux.conf;
     };
+
+    home.file.".tmux.conf".text = ''
+      source-file ${config.xdg.configHome}/tmux/tmux.conf
+    '';
   };
 }
