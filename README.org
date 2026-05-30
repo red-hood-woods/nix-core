@@ -12,15 +12,18 @@ because copying and pasting zshrc and tmux configs across different repositories
 * Where?
 here is the map of my shell essentials:
 
-- =modules/= — the core shell modules
-  - =core.nix= — the master module that bundle imports both zsh and tmux for a complete terminal experience!
-  - =zsh/= — my ultimate zsh shell setup
-    - =default.nix= — home manager configuration (sets up aliases, starship, zoxide, direnv, fzf, bat, etc.)
-    - =zshrc= — custom completion tweaks, key bindings, and handy git aliases!
-    - =starship.toml= — prompt configuration for a pretty visual indicator of where i am.
-  - =tmux/= — my terminal multiplexer config
-    - =default.nix= — tmux packages and source configuration.
-    - =tmux.conf= — mouse support, window renumbering, C-a prefix, and my favorite everforest dark-medium theme!
+- =modules/= - the core shell modules
+  - =core.nix= - the master module that bundle imports both zsh and tmux for a complete terminal experience!
+  - =zsh/= -  my ultimate zsh shell setup
+    - =default.nix= - home manager configuration (sets up aliases, starship, zoxide, direnv, fzf, bat, etc.)
+    - =zshrc= - custom completion tweaks, key bindings, and handy git aliases!
+    - =starship.toml= - prompt configuration for a pretty visual indicator of where i am.
+  - =tmux/= - my old terminal multiplexer config
+    - =default.nix= - tmux packages and source configuration.
+    - =tmux.conf= - mouse support, window renumbering, C-a prefix, and my favorite everforest dark-medium theme!
+  - =zellij= - my current terminal multiplexer config
+    - =default.nix= -
+    -
 
 * How to use this?
 
